@@ -1,0 +1,12 @@
+<h2>Movie List</h2>
+<div class="col-md-3 col-xs-3 items" *ngFor="let movie of results.results">
+  <div class="card" (click)="selected(movie.id)">
+  <img src="http://image.tmdb.org/t/p/w185{{movie.poster_path}}" class="img-responsive img-center" alt="">
+  <p class="vote">
+    {{movie.vote_average}}
+  </p>
+</div>
+<div class="title">
+  {{movie.original_title}}
+</div>
+</div>

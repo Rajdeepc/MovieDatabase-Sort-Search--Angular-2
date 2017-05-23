@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0d1610+0,192818+100 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#152023+0,1d2930+100 */
+background: #152023; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #152023 0%, #1d2930 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #152023 0%,#1d2930 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #152023 0%,#1d2930 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#152023', endColorstr='#1d2930',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+font-family: 'Roboto', sans-serif;
+color:#fff;
+font-weight: 300;
+}
+.h2, h2 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    text-align: left;
+    padding-left: 47px;
+}
