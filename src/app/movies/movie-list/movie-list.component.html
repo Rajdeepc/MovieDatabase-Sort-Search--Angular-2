@@ -1,12 +1,54 @@
-<h2>Movie List</h2>
-<div class="col-md-3 col-xs-3 items" *ngFor="let movie of results.results">
-  <div class="card" (click)="selected(movie.id)">
-  <img src="http://image.tmdb.org/t/p/w185{{movie.poster_path}}" class="img-responsive img-center" alt="">
-  <p class="vote">
-    {{movie.vote_average}}
-  </p>
+<div class="row">
+  <h1>Search Movie Database</h1>
+  <div class="search-box-wrapper">
+    <form action="" id="filter" class="form-horizontal">
+
+      <input class="form-control" placeholder="Search Movies by Name.." type="text" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}"
+      />
+    </form>
+
+  </div>
 </div>
-<div class="title">
-  {{movie.original_title}}
+<div class="movies-list">
+  <div class="col-md-3">
+    <h1>List of Movies</h1>
+  </div>
+  <!--<div class="col-md-9 text-right"><a href="" ><i class="fa fa-filter"></i> Filter By Genres</a><a href="">Sort By budget </a><span class="caret"></span></div>-->
+
+  <div class="">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <td>Title</td>
+        <td>Genre</td>
+        <td>Country</td>
+        <td>Language</td>
+        <td (click)="sort('budget')">Budget
+          <i class="fa" [ngClass]="{'fa-sort': column != 'budget', 
+                        'fa-sort-asc': (column == 'budget' && !isDesc), 
+                        'fa-sort-desc': (column == 'budget' && isDesc) }" aria-hidden="true"> </i>
+        </td>
+        <td>Year Released</td>
+        <td>Cast</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of results | moviename: searchText | orderBy: {property: column, direction: direction}">
+          <td><a target="_blank" href="{{movie.movie_imdb_link}}">{{movie.movie_title}}</a>
+          </td>
+          <td>{{movie.genres}}</td>
+          <td>{{movie.country}}</td>
+          <td>{{movie.language}}</td>
+          <td>{{movie.budget}}</td>
+          <td>{{movie.title_year}}</td>
+          <td>
+            <div><b>Director:</b> {{movie.director_name}}</div>
+            <div><b>Cast 1:</b> {{movie.actor_1_name}}</div>
+            <div><b>Cast 2:</b> {{movie.actor_2_name}}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+<div>
+
 </div>

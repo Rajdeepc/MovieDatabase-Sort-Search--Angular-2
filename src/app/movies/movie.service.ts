@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MovieService {
 
-  private _url: string = "http://api.themoviedb.org/3/movie/now_playing?api_key=e649c1ec4f43c9f8ea307ec5aec0e891";
+  private _url: string = "http://demo6727947.mockable.io/moviedata";
 
 //inject the service
   constructor(private _http: Http) { }
@@ -16,6 +16,7 @@ export class MovieService {
       .map((response: Response) => response.json());
       
   }
+  
   
 }
 
